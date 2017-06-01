@@ -21,9 +21,9 @@ FROM ocaml/opam:alpine-3.5_ocaml-4.04.0 as sdk
 RUN git -C /home/opam/opam-repository pull && opam update -u
 
 COPY --from=capnp /usr/local/bin/capnp /usr/local/bin/
-COPY --from=capnp /usr/local/lib/libcapnpc-0.6-dev.so /usr/local/lib/
-COPY --from=capnp /usr/local/lib/libcapnp-0.6-dev.so /usr/local/lib/
-COPY --from=capnp /usr/local/lib/libkj-0.6-dev.so /usr/local/lib/
+COPY --from=capnp /usr/local/lib/libcapnpc-0.7-dev.so /usr/local/lib/
+COPY --from=capnp /usr/local/lib/libcapnp-0.7-dev.so /usr/local/lib/
+COPY --from=capnp /usr/local/lib/libkj-0.7-dev.so /usr/local/lib/
 
 RUN sudo mkdir -p /src
 USER opam
